@@ -22,6 +22,7 @@
 		7B80272D1F95002C00DD50FB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B80272C1F95002C00DD50FB /* Constants.swift */; };
 		7B8027301F95025C00DD50FB /* CenterVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B80272F1F95025C00DD50FB /* CenterVCDelegate.swift */; };
 		7B812EA31F93C18200677283 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B812EA21F93C18200677283 /* MapKit.framework */; };
+		7BD794901F95468600E51C60 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD7948F1F95468600E51C60 /* UIViewExt.swift */; };
 		7BF94B1A1F940E3F00ED81D1 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF94B191F940E3F00ED81D1 /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		7B80272C1F95002C00DD50FB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7B80272F1F95025C00DD50FB /* CenterVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterVCDelegate.swift; sourceTree = "<group>"; };
 		7B812EA21F93C18200677283 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		7BD7948F1F95468600E51C60 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		7BF94B191F940E3F00ED81D1 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +84,7 @@
 		7B25DCB51F93B7A800D6F3BB /* Hitch */ = {
 			isa = PBXGroup;
 			children = (
+				7BD7948E1F95466D00E51C60 /* Extensions */,
 				7B80272E1F95024C00DD50FB /* Protocols */,
 				7B80272B1F95001C00DD50FB /* Utilities */,
 				7B5601941F93F27300DECCF1 /* Model */,
@@ -149,6 +152,14 @@
 				66696D10E41CD2A6A93EC89C /* Pods_Hitch.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7BD7948E1F95466D00E51C60 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7BD7948F1F95468600E51C60 /* UIViewExt.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		BDB92DB0FC049694A3AFF22F /* Pods */ = {
@@ -297,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BD794901F95468600E51C60 /* UIViewExt.swift in Sources */,
 				7B79EE781F9447FB000FF44E /* LeftSidePanelVC.swift in Sources */,
 				7B7070B01F9419B400E15438 /* RoundedShadowButton.swift in Sources */,
 				7B25DCB91F93B7A800D6F3BB /* HomeVC.swift in Sources */,
