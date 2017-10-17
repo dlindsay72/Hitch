@@ -22,6 +22,7 @@
 		7B80272D1F95002C00DD50FB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B80272C1F95002C00DD50FB /* Constants.swift */; };
 		7B8027301F95025C00DD50FB /* CenterVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B80272F1F95025C00DD50FB /* CenterVCDelegate.swift */; };
 		7B812EA31F93C18200677283 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B812EA21F93C18200677283 /* MapKit.framework */; };
+		7B922CE11F954DB300470D5C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B922CE01F954DB300470D5C /* LoginVC.swift */; };
 		7BD794901F95468600E51C60 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD7948F1F95468600E51C60 /* UIViewExt.swift */; };
 		7BF94B1A1F940E3F00ED81D1 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF94B191F940E3F00ED81D1 /* GradientView.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		7B80272C1F95002C00DD50FB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7B80272F1F95025C00DD50FB /* CenterVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterVCDelegate.swift; sourceTree = "<group>"; };
 		7B812EA21F93C18200677283 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		7B922CE01F954DB300470D5C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		7BD7948F1F95468600E51C60 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		7BF94B191F940E3F00ED81D1 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 				7B25DCB81F93B7A800D6F3BB /* HomeVC.swift */,
 				7B79EE771F9447FB000FF44E /* LeftSidePanelVC.swift */,
 				7B8027291F94FF2100DD50FB /* ContainerVC.swift */,
+				7B922CE01F954DB300470D5C /* LoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				7B7070AA1F94151800E15438 /* RoundImageView.swift in Sources */,
 				7B80272D1F95002C00DD50FB /* Constants.swift in Sources */,
 				7B7070AE1F9417AA00E15438 /* CircleView.swift in Sources */,
+				7B922CE11F954DB300470D5C /* LoginVC.swift in Sources */,
 				7B7070AC1F94169C00E15438 /* RoundedShadowView.swift in Sources */,
 				7B25DCB71F93B7A800D6F3BB /* AppDelegate.swift in Sources */,
 				7BF94B1A1F940E3F00ED81D1 /* GradientView.swift in Sources */,

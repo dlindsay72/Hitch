@@ -7,6 +7,10 @@
 //
 
 import Foundation
-
+// Storyboard Identifiers
 let LEFT_SIDE_PANEL_VC = "LeftSidePanelVC"
 let HOME_VC = "HomeVC"
+let LOGIN_VC = "LoginVC"
+
+// Segue Identifiers
+
