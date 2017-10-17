@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4132A26A4298DA8FB3023B15 /* Pods_Hitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66696D10E41CD2A6A93EC89C /* Pods_Hitch.framework */; };
+		7B230CE81F968AA200B93416 /* RoundedCornerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B230CE71F968AA200B93416 /* RoundedCornerTextField.swift */; };
 		7B25DCB71F93B7A800D6F3BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B25DCB61F93B7A800D6F3BB /* AppDelegate.swift */; };
 		7B25DCB91F93B7A800D6F3BB /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B25DCB81F93B7A800D6F3BB /* HomeVC.swift */; };
 		7B25DCBC1F93B7A800D6F3BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B25DCBA1F93B7A800D6F3BB /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		57B82A4DD10651A61082D266 /* Pods-Hitch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hitch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hitch/Pods-Hitch.release.xcconfig"; sourceTree = "<group>"; };
 		66696D10E41CD2A6A93EC89C /* Pods_Hitch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hitch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B230CE71F968AA200B93416 /* RoundedCornerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerTextField.swift; sourceTree = "<group>"; };
 		7B25DCB31F93B7A800D6F3BB /* Hitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B25DCB61F93B7A800D6F3BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B25DCB81F93B7A800D6F3BB /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				7B7070AB1F94169C00E15438 /* RoundedShadowView.swift */,
 				7B7070AD1F9417AA00E15438 /* CircleView.swift */,
 				7B7070AF1F9419B400E15438 /* RoundedShadowButton.swift */,
+				7B230CE71F968AA200B93416 /* RoundedCornerTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				7B922CE11F954DB300470D5C /* LoginVC.swift in Sources */,
 				7B7070AC1F94169C00E15438 /* RoundedShadowView.swift in Sources */,
 				7B25DCB71F93B7A800D6F3BB /* AppDelegate.swift in Sources */,
+				7B230CE81F968AA200B93416 /* RoundedCornerTextField.swift in Sources */,
 				7BF94B1A1F940E3F00ED81D1 /* GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
