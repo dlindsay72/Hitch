@@ -46,10 +46,10 @@ class LoginVC: UIViewController {
                     if error == nil {
                         if let user = user {
                             if self.segmentControl.selectedSegmentIndex == 0 {
-                                let userData = ["provider": user.providerID] as [String: Any]
+                                let userData = [PROVIDER: user.providerID] as [String: Any]
                                 DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: false)
                             } else {
-                                let userData = ["provider": user.providerID, "userIsDriver": true, "isPickupModeEnabled": false, "driverIsOnTrip": false] as [String: Any]
+                                let userData = [PROVIDER: user.providerID, USER_IS_DRIVER: true, IS_PICKUP_MODE_ENABLED: false, DRIVER_IS_ON_TRIP: false] as [String: Any]
                                 DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: true)
                             }
                         }
@@ -77,10 +77,10 @@ class LoginVC: UIViewController {
                             } else {
                                 if let user = user {
                                     if self.segmentControl.selectedSegmentIndex == 0 {
-                                        let userData = ["provider": user.providerID] as [String: Any]
+                                        let userData = [PROVIDER: user.providerID] as [String: Any]
                                         DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: false)
                                     } else {
-                                        let userData = ["provider": user.providerID, "userIsDriver": true, "isPickupModeEnabled": false, "driverIsOnTrip": false] as [String: Any]
+                                        let userData = [PROVIDER: user.providerID, USER_IS_DRIVER: true, IS_PICKUP_MODE_ENABLED: false, DRIVER_IS_ON_TRIP: false] as [String: Any]
                                         DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: true)
                                         
                                     }

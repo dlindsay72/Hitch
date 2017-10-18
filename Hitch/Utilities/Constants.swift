@@ -12,5 +12,9 @@ let LEFT_SIDE_PANEL_VC = "LeftSidePanelVC"
 let HOME_VC = "HomeVC"
 let LOGIN_VC = "LoginVC"
 
-// Segue Identifiers
+// Database Keys
+let IS_PICKUP_MODE_ENABLED = "isPickupModeEnabled"
+let DRIVER_IS_ON_TRIP = "driverIsOnTrip"
+let PROVIDER = "provider"
+let USER_IS_DRIVER = "userIsDriver"
 

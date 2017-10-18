@@ -231,41 +231,38 @@
                                     <constraint firstAttribute="height" constant="110" id="naQ-ST-rn4"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="7g3-dG-fcP">
-                                <rect key="frame" x="20" y="150" width="133" height="180"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7g3-dG-fcP">
+                                <rect key="frame" x="20" y="130" width="133" height="151"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWu-rC-EZH">
-                                        <rect key="frame" x="0.0" y="0.0" width="133" height="40.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="133" height="34"/>
                                         <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="22"/>
                                         <state key="normal" title="Payment">
                                             <color key="titleColor" red="0.37251365184783936" green="0.37257164716720581" blue="0.37250098586082458" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94H-Hq-kNA">
-                                        <rect key="frame" x="0.0" y="46.5" width="133" height="40.5"/>
+                                        <rect key="frame" x="0.0" y="39" width="133" height="34"/>
                                         <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="22"/>
                                         <state key="normal" title="Your Trips">
                                             <color key="titleColor" red="0.37251365180000001" green="0.37257164720000002" blue="0.37250098590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPy-bC-ekW">
-                                        <rect key="frame" x="0.0" y="93" width="133" height="40.5"/>
+                                        <rect key="frame" x="0.0" y="78" width="133" height="34"/>
                                         <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="22"/>
                                         <state key="normal" title="Help">
                                             <color key="titleColor" red="0.37251365180000001" green="0.37257164720000002" blue="0.37250098590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cow-3a-ZYA">
-                                        <rect key="frame" x="0.0" y="139.5" width="133" height="40.5"/>
+                                        <rect key="frame" x="0.0" y="117" width="133" height="34"/>
                                         <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="22"/>
                                         <state key="normal" title="Settings">
                                             <color key="titleColor" red="0.37251365180000001" green="0.37257164720000002" blue="0.37250098590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="Mym-G9-ceF"/>
-                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fi-a5-cev">
                                 <rect key="frame" x="20" y="954" width="172" height="50"/>
@@ -280,20 +277,77 @@
                                     <action selector="signUpLoginPressed:" destination="ynW-el-ZqV" eventType="touchUpInside" id="GXP-yJ-LzY"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="rPF-AL-4Tu">
+                                <rect key="frame" x="20" y="900" width="179.5" height="46"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="passenger65@hotmail.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Tcv-zK-Qyt">
+                                        <rect key="frame" x="0.0" y="0.0" width="179.5" height="13"/>
+                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="13"/>
+                                        <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACCOUNT TYPE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AIP-wI-xun">
+                                        <rect key="frame" x="0.0" y="29" width="122.5" height="17"/>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="17"/>
+                                        <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winnick" translatesAutoresizingMaskIntoConstraints="NO" id="QAP-hL-AiL" customClass="RoundImageView" customModule="Hitch" customModuleProvider="target">
+                                <rect key="frame" x="20" y="830" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Ng7-zW-l6j"/>
+                                    <constraint firstAttribute="width" constant="60" id="aLm-PJ-Npq"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PICKUP MODE ENABLED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuy-8w-L14">
+                                <rect key="frame" x="20" y="794" width="171.5" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="rWv-UW-jgo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="15"/>
+                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gcq-JI-XSC">
+                                <rect key="frame" x="20" y="749" width="51" height="31"/>
+                                <color key="onTintColor" red="0.84705882349999995" green="0.2784313725" blue="0.073837379999999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="pickupModeSwitchToggled:" destination="ynW-el-ZqV" eventType="valueChanged" id="Y5O-Bz-2Az"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7g3-dG-fcP" firstAttribute="top" secondItem="gsI-yb-7MZ" secondAttribute="bottom" constant="40" id="3rk-c8-JeC"/>
+                            <constraint firstItem="nuy-8w-L14" firstAttribute="leading" secondItem="3wR-pO-0hr" secondAttribute="leading" constant="20" id="2Rc-8x-wp2"/>
+                            <constraint firstItem="7g3-dG-fcP" firstAttribute="top" secondItem="gsI-yb-7MZ" secondAttribute="bottom" constant="20" id="3rk-c8-JeC"/>
+                            <constraint firstItem="7Fi-a5-cev" firstAttribute="top" secondItem="rPF-AL-4Tu" secondAttribute="bottom" constant="8" id="A5P-lC-djq"/>
+                            <constraint firstItem="rPF-AL-4Tu" firstAttribute="leading" secondItem="3wR-pO-0hr" secondAttribute="leading" constant="20" id="Cvy-Bj-S14"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7Fi-a5-cev" secondAttribute="trailing" constant="20" symbolic="YES" id="Eae-kW-ujq"/>
                             <constraint firstItem="gsI-yb-7MZ" firstAttribute="top" secondItem="S1a-DU-Aqn" secondAttribute="top" id="G4O-bM-3at"/>
+                            <constraint firstItem="Gcq-JI-XSC" firstAttribute="leading" secondItem="3wR-pO-0hr" secondAttribute="leading" constant="20" id="Iye-zF-coC"/>
                             <constraint firstItem="gsI-yb-7MZ" firstAttribute="leading" secondItem="3wR-pO-0hr" secondAttribute="leading" id="KFc-vI-SQL"/>
                             <constraint firstItem="3wR-pO-0hr" firstAttribute="bottom" secondItem="7Fi-a5-cev" secondAttribute="bottom" constant="20" id="N0G-ev-yG8"/>
                             <constraint firstAttribute="trailing" secondItem="gsI-yb-7MZ" secondAttribute="trailing" id="ORf-XY-AmK"/>
+                            <constraint firstItem="rPF-AL-4Tu" firstAttribute="top" secondItem="QAP-hL-AiL" secondAttribute="bottom" constant="10" id="T02-9N-Ma7"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nuy-8w-L14" secondAttribute="trailing" constant="20" symbolic="YES" id="UFG-bG-YU9"/>
+                            <constraint firstItem="QAP-hL-AiL" firstAttribute="leading" secondItem="3wR-pO-0hr" secondAttribute="leading" constant="20" id="aCa-ef-aWN"/>
+                            <constraint firstItem="nuy-8w-L14" firstAttribute="top" secondItem="Gcq-JI-XSC" secondAttribute="bottom" constant="14" id="clb-Oa-ze9"/>
+                            <constraint firstItem="QAP-hL-AiL" firstAttribute="top" secondItem="nuy-8w-L14" secondAttribute="bottom" constant="16" id="cyc-WL-nat"/>
                             <constraint firstItem="7Fi-a5-cev" firstAttribute="leading" secondItem="3wR-pO-0hr" secondAttribute="leading" constant="20" id="rbe-DW-2hG"/>
                             <constraint firstItem="7g3-dG-fcP" firstAttribute="leading" secondItem="3wR-pO-0hr" secondAttribute="leading" constant="20" id="tiz-s4-p8W"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3wR-pO-0hr"/>
                     </view>
+                    <connections>
+                        <outlet property="accountTypeLbl" destination="AIP-wI-xun" id="ELS-E0-6G8"/>
+                        <outlet property="pickupModeLbl" destination="nuy-8w-L14" id="Unp-q8-ZpF"/>
+                        <outlet property="pickupModeSwitch" destination="Gcq-JI-XSC" id="uAK-j5-Pxx"/>
+                        <outlet property="signUpLoginBtn" destination="7Fi-a5-cev" id="VJ9-aF-SeZ"/>
+                        <outlet property="userEmailLbl" destination="Tcv-zK-Qyt" id="45x-cc-vtg"/>
+                        <outlet property="userImageView" destination="QAP-hL-AiL" id="kI0-1v-kUW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qfn-zX-U2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
