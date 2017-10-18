@@ -433,6 +433,7 @@
                         <outlet property="emailTextField" destination="Sxq-LM-UhJ" id="9nU-Hf-4RP"/>
                         <outlet property="passwordTextField" destination="pHP-Sh-cwz" id="1pG-16-3Hu"/>
                         <outlet property="segmentControl" destination="vYg-Hd-E04" id="sWQ-B1-jDt"/>
+                        <outlet property="signUpLoginBtn" destination="es1-KJ-n9s" id="wk9-eb-47p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nUN-du-cfn" userLabel="First Responder" sceneMemberID="firstResponder"/>
