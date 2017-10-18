@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4132A26A4298DA8FB3023B15 /* Pods_Hitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66696D10E41CD2A6A93EC89C /* Pods_Hitch.framework */; };
+		7B19B58A1F96E91000E59B08 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19B5891F96E91000E59B08 /* DataService.swift */; };
 		7B230CE81F968AA200B93416 /* RoundedCornerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B230CE71F968AA200B93416 /* RoundedCornerTextField.swift */; };
 		7B25DCB71F93B7A800D6F3BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B25DCB61F93B7A800D6F3BB /* AppDelegate.swift */; };
 		7B25DCB91F93B7A800D6F3BB /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B25DCB81F93B7A800D6F3BB /* HomeVC.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		57B82A4DD10651A61082D266 /* Pods-Hitch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hitch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hitch/Pods-Hitch.release.xcconfig"; sourceTree = "<group>"; };
 		66696D10E41CD2A6A93EC89C /* Pods_Hitch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hitch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B19B5891F96E91000E59B08 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		7B230CE71F968AA200B93416 /* RoundedCornerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerTextField.swift; sourceTree = "<group>"; };
 		7B25DCB31F93B7A800D6F3BB /* Hitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B25DCB61F93B7A800D6F3BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B19B5881F96E8FA00E59B08 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7B19B5891F96E91000E59B08 /* DataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		7B25DCAA1F93B7A800D6F3BB = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +100,7 @@
 		7B25DCB51F93B7A800D6F3BB /* Hitch */ = {
 			isa = PBXGroup;
 			children = (
+				7B19B5881F96E8FA00E59B08 /* Services */,
 				7BD7948E1F95466D00E51C60 /* Extensions */,
 				7B80272E1F95024C00DD50FB /* Protocols */,
 				7B80272B1F95001C00DD50FB /* Utilities */,
@@ -327,6 +338,7 @@
 				7B7070AA1F94151800E15438 /* RoundImageView.swift in Sources */,
 				7B80272D1F95002C00DD50FB /* Constants.swift in Sources */,
 				7B7070AE1F9417AA00E15438 /* CircleView.swift in Sources */,
+				7B19B58A1F96E91000E59B08 /* DataService.swift in Sources */,
 				7B922CE11F954DB300470D5C /* LoginVC.swift in Sources */,
 				7B7070AC1F94169C00E15438 /* RoundedShadowView.swift in Sources */,
 				7B25DCB71F93B7A800D6F3BB /* AppDelegate.swift in Sources */,
