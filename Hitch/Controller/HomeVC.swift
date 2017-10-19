@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import RevealingSplashView
 import CoreLocation
+import Firebase
 
 class HomeVC: UIViewController {
 
@@ -36,6 +37,10 @@ class HomeVC: UIViewController {
         checkLocationAuthStatus()
         centerMapOnUserLocation()
         
+        DataService.instance.REF_DRIVERS.observe(.value) { (snapshot) in
+            self.loadDriverAnnotationsFromFB()
+        }
+        
         mapView.delegate = self
         
         self.view.addSubview(revealingSplashView)
@@ -51,6 +56,51 @@ class HomeVC: UIViewController {
             locationManager?.stopUpdatingLocation()
         } else {
             locationManager?.requestAlwaysAuthorization()
+        }
+    }
+    
+    func loadDriverAnnotationsFromFB() {
+        DataService.instance.REF_DRIVERS.observeSingleEvent(of: .value) { (snapshot) in
+            if let driverSnapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                for driver in driverSnapshot {
+                    if driver.hasChild(USER_IS_DRIVER) {
+                        if driver.hasChild(COORDINATE) {
+                            if driver.childSnapshot(forPath: IS_PICKUP_MODE_ENABLED).value as? Bool == true {
+                                if let driverDict = driver.value as? Dictionary<String, AnyObject> {
+                                    let coordinateArray = driverDict[COORDINATE] as! NSArray
+                                    let driverCoordinate = CLLocationCoordinate2D(latitude: coordinateArray[0] as! CLLocationDegrees, longitude: coordinateArray[1] as! CLLocationDegrees)
+                                    let annotation = DriverAnnotation(coordinate: driverCoordinate, key: driver.key)
+                                    
+                                    var driverIsVisible: Bool {
+                                        return self.mapView.annotations.contains(where: { (annotation) -> Bool in
+                                            if let driverAnnotation = annotation as? DriverAnnotation {
+                                                if driverAnnotation.key == driver.key {
+                                                    driverAnnotation.update(annotationPosition: driverAnnotation, withCoordinate: driverCoordinate)
+                                                    return true
+                                                }
+                                            }
+                                            return false
+                                        })
+                                    }
+                                    if !driverIsVisible {
+                                        self.mapView.addAnnotation(annotation)
+                                    }
+                                }
+                            } else {
+                                for annotation in self.mapView.annotations {
+                                    if annotation.isKind(of: DriverAnnotation.self) {
+                                        if let annotation = annotation as? DriverAnnotation {
+                                            if annotation.key == driver.key {
+                                                self.mapView.removeAnnotation(annotation)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     
