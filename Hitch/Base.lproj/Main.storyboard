@@ -159,8 +159,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Where are you going?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U8C-kG-bH7">
-                                                <rect key="frame" x="25" y="4.5" width="663" height="16"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Where are you going?" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="U8C-kG-bH7">
+                                                <rect key="frame" x="25" y="3" width="663" height="19"/>
                                                 <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -202,6 +202,8 @@
                     <connections>
                         <outlet property="actionBtn" destination="0Us-3b-ZJQ" id="3ba-8k-35l"/>
                         <outlet property="centerMapBtn" destination="Noi-qY-7fB" id="FL6-Of-UnV"/>
+                        <outlet property="destinationCircleView" destination="PME-br-FZl" id="12k-f6-Sdy"/>
+                        <outlet property="destinationTextField" destination="U8C-kG-bH7" id="eV5-RN-o99"/>
                         <outlet property="mapView" destination="uU3-2x-Y8M" id="yi6-GZ-DOB"/>
                     </connections>
                 </viewController>
