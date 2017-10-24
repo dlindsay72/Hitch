@@ -28,6 +28,7 @@
 		7B922CE11F954DB300470D5C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B922CE01F954DB300470D5C /* LoginVC.swift */; };
 		7B9C34FF1F98F6770023CE9D /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9C34FE1F98F6770023CE9D /* UpdateService.swift */; };
 		7B9C35011F9908D20023CE9D /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9C35001F9908D20023CE9D /* DriverAnnotation.swift */; };
+		7BD473131F9ED832004FBDEF /* PassengerAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD473121F9ED832004FBDEF /* PassengerAnnotation.swift */; };
 		7BD794901F95468600E51C60 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD7948F1F95468600E51C60 /* UIViewExt.swift */; };
 		7BF94B1A1F940E3F00ED81D1 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF94B191F940E3F00ED81D1 /* GradientView.swift */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		7B922CE01F954DB300470D5C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		7B9C34FE1F98F6770023CE9D /* UpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
 		7B9C35001F9908D20023CE9D /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
+		7BD473121F9ED832004FBDEF /* PassengerAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerAnnotation.swift; sourceTree = "<group>"; };
 		7BD7948F1F95468600E51C60 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		7BF94B191F940E3F00ED81D1 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +145,7 @@
 				7B7070AF1F9419B400E15438 /* RoundedShadowButton.swift */,
 				7B230CE71F968AA200B93416 /* RoundedCornerTextField.swift */,
 				7B9C35001F9908D20023CE9D /* DriverAnnotation.swift */,
+				7BD473121F9ED832004FBDEF /* PassengerAnnotation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BD794901F95468600E51C60 /* UIViewExt.swift in Sources */,
+				7BD473131F9ED832004FBDEF /* PassengerAnnotation.swift in Sources */,
 				7B79EE781F9447FB000FF44E /* LeftSidePanelVC.swift in Sources */,
 				7B9C34FF1F98F6770023CE9D /* UpdateService.swift in Sources */,
 				7B9C35011F9908D20023CE9D /* DriverAnnotation.swift in Sources */,

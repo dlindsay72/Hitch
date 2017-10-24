@@ -19,10 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var MenuContainerVC: ContainerVC {
         return containerVC
     }
+    
+    override init() {
+        super.init()
+        FirebaseApp.configure()
+        Database.database().isPersistenceEnabled = true
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        FirebaseApp.configure()
+        
         containerVC = ContainerVC()
         window?.rootViewController = containerVC
         window?.makeKeyAndVisible()

@@ -18,6 +18,7 @@ let DRIVER_IS_ON_TRIP = "driverIsOnTrip"
 let PROVIDER = "provider"
 let USER_IS_DRIVER = "userIsDriver"
 let COORDINATE = "coordinate"
+let TRIP_COORDINATE = "tripCoordinate"
 
 //TableViewCell Identifiers
 let LOCATION_CELL = "locationCell"
