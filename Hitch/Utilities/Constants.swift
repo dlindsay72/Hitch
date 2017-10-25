@@ -6,11 +6,13 @@
 //  Copyright © 2017 Dan Lindsay. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
 // Storyboard Identifiers
 let LEFT_SIDE_PANEL_VC = "LeftSidePanelVC"
 let HOME_VC = "HomeVC"
 let LOGIN_VC = "LoginVC"
+let SIGN_UP_VC = "SignUpVC"
 
 // Database Keys
 let IS_PICKUP_MODE_ENABLED = "isPickupModeEnabled"
@@ -22,4 +24,10 @@ let TRIP_COORDINATE = "tripCoordinate"
 
 //TableViewCell Identifiers
 let LOCATION_CELL = "locationCell"
+
+// Segue Identifiers
+let TO_SIGN_UP_VC = "toSignUpVC"
+
+// Font
+public let FONT = UIFont.systemFont(ofSize: 20)
 

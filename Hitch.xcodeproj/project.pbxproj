@@ -26,6 +26,7 @@
 		7B8027301F95025C00DD50FB /* CenterVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B80272F1F95025C00DD50FB /* CenterVCDelegate.swift */; };
 		7B812EA31F93C18200677283 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B812EA21F93C18200677283 /* MapKit.framework */; };
 		7B922CE11F954DB300470D5C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B922CE01F954DB300470D5C /* LoginVC.swift */; };
+		7B9B65261F9FC66800E3668A /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B65251F9FC66800E3668A /* SignUpVC.swift */; };
 		7B9C34FF1F98F6770023CE9D /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9C34FE1F98F6770023CE9D /* UpdateService.swift */; };
 		7B9C35011F9908D20023CE9D /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9C35001F9908D20023CE9D /* DriverAnnotation.swift */; };
 		7BD473131F9ED832004FBDEF /* PassengerAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD473121F9ED832004FBDEF /* PassengerAnnotation.swift */; };
@@ -57,6 +58,7 @@
 		7B80272F1F95025C00DD50FB /* CenterVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterVCDelegate.swift; sourceTree = "<group>"; };
 		7B812EA21F93C18200677283 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7B922CE01F954DB300470D5C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		7B9B65251F9FC66800E3668A /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		7B9C34FE1F98F6770023CE9D /* UpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
 		7B9C35001F9908D20023CE9D /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
 		7BD473121F9ED832004FBDEF /* PassengerAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerAnnotation.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				7B79EE771F9447FB000FF44E /* LeftSidePanelVC.swift */,
 				7B8027291F94FF2100DD50FB /* ContainerVC.swift */,
 				7B922CE01F954DB300470D5C /* LoginVC.swift */,
+				7B9B65251F9FC66800E3668A /* SignUpVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				7B9C35011F9908D20023CE9D /* DriverAnnotation.swift in Sources */,
 				7B7070B01F9419B400E15438 /* RoundedShadowButton.swift in Sources */,
 				7B25DCB91F93B7A800D6F3BB /* HomeVC.swift in Sources */,
+				7B9B65261F9FC66800E3668A /* SignUpVC.swift in Sources */,
 				7B80272A1F94FF2100DD50FB /* ContainerVC.swift in Sources */,
 				7B8027301F95025C00DD50FB /* CenterVCDelegate.swift in Sources */,
 				7B7070AA1F94151800E15438 /* RoundImageView.swift in Sources */,

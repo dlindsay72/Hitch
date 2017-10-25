@@ -292,15 +292,23 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let passengerCoordinate = locationManager?.location?.coordinate
-        let passengerAnnotation = PassengerAnnotation(coordinate: passengerCoordinate!, key: currentUserId!)
-        mapView.addAnnotation(passengerAnnotation)
+        if let passengerCoordinate = locationManager?.location?.coordinate {
+            if let currentID = currentUserId {
+                let passengerAnnotation = PassengerAnnotation(coordinate: passengerCoordinate, key: currentID)
+                mapView.addAnnotation(passengerAnnotation)
+                destinationTextField.text = tableView.cellForRow(at: indexPath)?.textLabel?.text
+                let selectedMapItem = matchingItems[indexPath.row]
+                DataService.instance.REF_USERS.child(currentID).updateChildValues([TRIP_COORDINATE: [selectedMapItem.placemark.location?.coordinate.latitude, selectedMapItem.placemark.location?.coordinate.longitude]])
+                animateTableView(shouldShow: false)
+                print("Selected!")
+            } else {
+                print("It was not possible to get the current user id or the passengerCoordinate")
+            }
+        }
         
-        destinationTextField.text = tableView.cellForRow(at: indexPath)?.textLabel?.text
-        let selectedMapItem = matchingItems[indexPath.row]
-        DataService.instance.REF_USERS.child(currentUserId!).updateChildValues([TRIP_COORDINATE: [selectedMapItem.placemark.location?.coordinate.latitude, selectedMapItem.placemark.location?.coordinate.longitude]])
-        animateTableView(shouldShow: false)
-        print("Selected!")
+        
+        
+        
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

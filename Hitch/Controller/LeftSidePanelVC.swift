@@ -87,7 +87,7 @@ class LeftSidePanelVC: UIViewController {
         pickupModeSwitch.isHidden = true
         pickupModeLbl.text = ""
         userImageView.isHidden = true
-        signUpLoginBtn.setTitle("Sign Up/Login", for: .normal)
+        signUpLoginBtn.setTitle("Login", for: .normal)
     }
     
     //MARK: - IBActions
