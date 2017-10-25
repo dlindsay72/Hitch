@@ -56,7 +56,6 @@ class LoginVC: UIViewController {
                 Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
                     if error == nil {
                         if let user = user {
-                            // start of cut 2
                             if self.segmentControl.selectedSegmentIndex == 0 {
                                 let userData = [PROVIDER: user.providerID] as [String: Any]
                                 DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: false)
@@ -78,7 +77,6 @@ class LoginVC: UIViewController {
                                 print("Something went wrong. Please try again. Error: \(error.debugDescription)")
                             }
                         }
-                        //this is the start of our cut
                     }
                 })
             }
@@ -95,33 +93,7 @@ class LoginVC: UIViewController {
 extension LoginVC: UITextFieldDelegate {
     
 }
-// cut 1
-//                        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-//                            if error != nil {
-//                                if let errorCode = AuthErrorCode(rawValue: error!._code) {
-//                                    switch errorCode {
-//                                    case .invalidEmail:
-//                                        print("That email is invalid. Please try again.")
-//                                    default:
-//                                        print("An unknown error occurred. Please try again. Error: \(error.debugDescription)")
-//                                    }
-//                                }
-//                            } else {
-//                                if let user = user {
-//                                    if self.segmentControl.selectedSegmentIndex == 0 {
-//                                        let userData = [PROVIDER: user.providerID] as [String: Any]
-//                                        DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: false)
-//                                    } else {
-//                                        let userData = [PROVIDER: user.providerID, USER_IS_DRIVER: true, IS_PICKUP_MODE_ENABLED: false, DRIVER_IS_ON_TRIP: false] as [String: Any]
-//                                        DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: true)
-//
-//                                    }
-//                                }
-//                                print("Successfully created a new user with Firebase")
-//                                self.dismiss(animated: true, completion: nil)
-//                            }
-//                        })
-// cut 2
+
 
 
 

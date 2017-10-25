@@ -303,12 +303,9 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
                 print("Selected!")
             } else {
                 print("It was not possible to get the current user id or the passengerCoordinate")
+                fatalError()
             }
         }
-        
-        
-        
-        
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
