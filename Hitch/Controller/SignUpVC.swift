@@ -27,7 +27,7 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
         
         view.bindToKeyboard()
         
-        segmentControl.setTitleTextAttributes([NSAttributedStringKey.font: FONT], for: .normal)
+        segmentControl.setTitleTextAttributes([NSAttributedStringKey.font: fontSize20], for: .normal)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleScreenTap(sender:)))
         self.view.addGestureRecognizer(tap)
@@ -63,15 +63,16 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
                     } else {
                         if let user = user {
                             if self.segmentControl.selectedSegmentIndex == 0 {
-                                let userData = [PROVIDER: user.providerID] as [String: Any]
+                                let userData = [DatabaseKeys.provider.rawValue: user.providerID] as [String: Any]
                                 DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: false)
                             } else {
-                                let userData = [PROVIDER: user.providerID, USER_IS_DRIVER: true, IS_PICKUP_MODE_ENABLED: false, DRIVER_IS_ON_TRIP: false] as [String: Any]
+                                let userData = [DatabaseKeys.provider.rawValue: user.providerID, DatabaseKeys.userIsDriver.rawValue: true, DatabaseKeys.isPickupModeEnabled.rawValue: false, DatabaseKeys.driverIsOnTrip.rawValue: false] as [String: Any]
                                 DataService.instance.createFirebaseDBUser(uid: user.uid, userData: userData, isDriver: true)
                             }
                         }
                         print("Successfully created a new user with Firebase")
                         try! Auth.auth().signOut()
+                        print("User has been signed out")
                         self.dismiss(animated: true, completion: nil)
                     }
                 })

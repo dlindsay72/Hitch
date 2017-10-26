@@ -184,11 +184,11 @@ private extension UIStoryboard {
     }
     
     class func leftViewController() -> LeftSidePanelVC? {
-        return mainStroyboard().instantiateViewController(withIdentifier: LEFT_SIDE_PANEL_VC) as? LeftSidePanelVC
+        return mainStroyboard().instantiateViewController(withIdentifier: StoryBoardIdentifiers.leftSidePanelVC.rawValue) as? LeftSidePanelVC
     }
     
     class func homeVC() -> HomeVC? {
-        return mainStroyboard().instantiateViewController(withIdentifier: HOME_VC) as? HomeVC
+        return mainStroyboard().instantiateViewController(withIdentifier: StoryBoardIdentifiers.homeVC.rawValue) as? HomeVC
     }
     
 }

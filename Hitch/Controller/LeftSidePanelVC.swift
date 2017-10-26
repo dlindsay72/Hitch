@@ -55,30 +55,36 @@ class LeftSidePanelVC: UIViewController {
     //MARK: - Methods
 
     func observePassengersAndDrivers() {
+        DataService.instance.REF_DRIVERS.observeSingleEvent(of: .value) { (snapshot) in
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                for snap in snapshot {
+                    if let currentUserID = Auth.auth().currentUser?.uid {
+                        if snap.key == currentUserID {
+                            self.accountTypeLbl.text = "DRIVER"
+                            self.pickupModeLbl.isHidden = false
+                            self.pickupModeLbl.text = "PICKUP MODE DISABLED"
+                            self.pickupModeSwitch.isHidden = false
+                            let switchStatus = snap.childSnapshot(forPath: DatabaseKeys.isPickupModeEnabled.rawValue).value as! Bool
+                            self.pickupModeSwitch.isOn = switchStatus
+                            print("This is what shows up in REF_DRIVERS observer: \(String(describing: Auth.auth().currentUser!.uid))")
+                        }
+                    }
+                    
+                }
+            }
+        }
         DataService.instance.REF_USERS.observeSingleEvent(of: .value) { (snapshot) in
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snapshot {
                     if snap.key == Auth.auth().currentUser?.uid {
                         self.accountTypeLbl.text = "PASSENGER"
                         self.userImageView.isHidden = false
+                        print("This is what shows up in REF_USER observer: \(String(describing: Auth.auth().currentUser!.uid))")
                     }
                 }
             }
         }
-        DataService.instance.REF_DRIVERS.observeSingleEvent(of: .value) { (snapshot) in
-            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
-                for snap in snapshot {
-                    if snap.key == Auth.auth().currentUser?.uid {
-                        self.accountTypeLbl.text = "DRIVER"
-                        self.pickupModeLbl.isHidden = false
-                        self.pickupModeLbl.text = "PICKUP MODE DISABLED"
-                        self.pickupModeSwitch.isHidden = false
-                        let switchStatus = snap.childSnapshot(forPath: IS_PICKUP_MODE_ENABLED).value as! Bool
-                        self.pickupModeSwitch.isOn = switchStatus
-                    }
-                }
-            }
-        }
+        
     }
     
     func clearLabelsAndImageViews() {
@@ -97,13 +103,13 @@ class LeftSidePanelVC: UIViewController {
             pickupModeLbl.text = "PICKUP MODE ENABLED"
             appDelgate.MenuContainerVC.toggLeftPanel()
             if let currentUser = currentUserId {
-                DataService.instance.REF_DRIVERS.child(currentUser).updateChildValues([IS_PICKUP_MODE_ENABLED: true])
+                DataService.instance.REF_DRIVERS.child(currentUser).updateChildValues([DatabaseKeys.isPickupModeEnabled.rawValue: true])
             }
         } else {
             pickupModeLbl.text = "PICKUP MODE DISABLED"
             appDelgate.MenuContainerVC.toggLeftPanel()
             if let currentUser = currentUserId {
-                DataService.instance.REF_DRIVERS.child(currentUser).updateChildValues([IS_PICKUP_MODE_ENABLED: false])
+                DataService.instance.REF_DRIVERS.child(currentUser).updateChildValues([DatabaseKeys.isPickupModeEnabled.rawValue: false])
             }
         }
     }
@@ -112,7 +118,7 @@ class LeftSidePanelVC: UIViewController {
     @IBAction func signUpLoginPressed(_ sender: Any) {
         if Auth.auth().currentUser == nil {
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            if let loginVC = storyboard.instantiateViewController(withIdentifier: LOGIN_VC) as? LoginVC {
+            if let loginVC = storyboard.instantiateViewController(withIdentifier: StoryBoardIdentifiers.loginVC.rawValue) as? LoginVC {
                 present(loginVC, animated: true, completion: nil)
             }
         } else {

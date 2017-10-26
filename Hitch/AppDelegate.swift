@@ -23,7 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     override init() {
         super.init()
         FirebaseApp.configure()
+        
         Database.database().isPersistenceEnabled = true
+        
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -33,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = containerVC
         window?.makeKeyAndVisible()
         
+      //  application.registerForRemoteNotifications()
         return true
     }
 

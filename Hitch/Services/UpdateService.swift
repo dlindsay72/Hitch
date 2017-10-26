@@ -18,7 +18,7 @@ class UpdateService {
             if let userSnapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for user in userSnapshot {
                     if user.key == Auth.auth().currentUser?.uid {
-                        DataService.instance.REF_USERS.child(user.key).updateChildValues([COORDINATE: [coordinate.latitude, coordinate.longitude]])
+                        DataService.instance.REF_USERS.child(user.key).updateChildValues([DatabaseKeys.coordinate.rawValue: [coordinate.latitude, coordinate.longitude]])
                     }
                 }
             }
@@ -30,8 +30,8 @@ class UpdateService {
             if let driverSnapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for driver in driverSnapshot {
                     if driver.key == Auth.auth().currentUser?.uid {
-                        if driver.childSnapshot(forPath: IS_PICKUP_MODE_ENABLED).value as? Bool == true {
-                            DataService.instance.REF_DRIVERS.child(driver.key).updateChildValues([COORDINATE: [coordinate.latitude, coordinate.longitude]])
+                        if driver.childSnapshot(forPath: DatabaseKeys.isPickupModeEnabled.rawValue).value as? Bool == true {
+                            DataService.instance.REF_DRIVERS.child(driver.key).updateChildValues([DatabaseKeys.coordinate.rawValue: [coordinate.latitude, coordinate.longitude]])
                         }
                     }
                 }

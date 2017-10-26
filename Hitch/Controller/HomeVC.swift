@@ -43,6 +43,13 @@ class HomeVC: UIViewController {
         checkLocationAuthStatus()
         centerMapOnUserLocation()
         
+        Auth.auth().addStateDidChangeListener { (auth, user) in  //eventually remove this, as it is just to test
+            if let user = user {
+                print("This is the user info from addStateDidChangeListener: \(String(describing: user.uid))")
+            }
+            
+        }
+        
         DataService.instance.REF_DRIVERS.observe(.value) { (snapshot) in
             self.loadDriverAnnotationsFromFB()
         }
@@ -70,11 +77,11 @@ class HomeVC: UIViewController {
         DataService.instance.REF_DRIVERS.observeSingleEvent(of: .value) { (snapshot) in
             if let driverSnapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for driver in driverSnapshot {
-                    if driver.hasChild(USER_IS_DRIVER) {
-                        if driver.hasChild(COORDINATE) {
-                            if driver.childSnapshot(forPath: IS_PICKUP_MODE_ENABLED).value as? Bool == true {
+                    if driver.hasChild(DatabaseKeys.userIsDriver.rawValue) {
+                        if driver.hasChild(DatabaseKeys.coordinate.rawValue) {
+                            if driver.childSnapshot(forPath: DatabaseKeys.isPickupModeEnabled.rawValue).value as? Bool == true {
                                 if let driverDict = driver.value as? Dictionary<String, AnyObject> {
-                                    let coordinateArray = driverDict[COORDINATE] as! NSArray
+                                    let coordinateArray = driverDict[DatabaseKeys.coordinate.rawValue] as! NSArray
                                     let driverCoordinate = CLLocationCoordinate2D(latitude: coordinateArray[0] as! CLLocationDegrees, longitude: coordinateArray[1] as! CLLocationDegrees)
                                     let annotation = DriverAnnotation(coordinate: driverCoordinate, key: driver.key)
                                     
@@ -206,7 +213,7 @@ extension HomeVC: UITextFieldDelegate {
         if textField == destinationTextField {
             tableView.frame = CGRect(x: 20, y: view.frame.height, width: view.frame.width - 40, height: view.frame.height - 200)
             tableView.layer.cornerRadius = 5.0
-            tableView.register(UITableViewCell.self, forCellReuseIdentifier: LOCATION_CELL)
+            tableView.register(UITableViewCell.self, forCellReuseIdentifier: CellIdentifiers.locationCell.rawValue)
             
             tableView.delegate = self
             tableView.dataSource = self
@@ -274,7 +281,7 @@ extension HomeVC: UITextFieldDelegate {
 
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: LOCATION_CELL)
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: CellIdentifiers.locationCell.rawValue)
         let mapItem = matchingItems[indexPath.row]
         cell.textLabel?.text = mapItem.name
         cell.detailTextLabel?.text = mapItem.placemark.title
@@ -291,21 +298,29 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if let passengerCoordinate = locationManager?.location?.coordinate {
-            if let currentID = currentUserId {
-                let passengerAnnotation = PassengerAnnotation(coordinate: passengerCoordinate, key: currentID)
-                mapView.addAnnotation(passengerAnnotation)
-                destinationTextField.text = tableView.cellForRow(at: indexPath)?.textLabel?.text
-                let selectedMapItem = matchingItems[indexPath.row]
-                DataService.instance.REF_USERS.child(currentID).updateChildValues([TRIP_COORDINATE: [selectedMapItem.placemark.location?.coordinate.latitude, selectedMapItem.placemark.location?.coordinate.longitude]])
-                animateTableView(shouldShow: false)
-                print("Selected!")
-            } else {
-                print("It was not possible to get the current user id or the passengerCoordinate")
-                fatalError()
+        if Auth.auth().currentUser?.uid != nil {
+            print("The current user's uid is: \(String(describing: Auth.auth().currentUser!.uid))")
+            if let passengerCoordinate = locationManager?.location?.coordinate {
+                print("This is where our passenger is: \(passengerCoordinate)")
+                if let currentID = currentUserId {
+                    print("WE GOT HERE!")
+                    let passengerAnnotation = PassengerAnnotation(coordinate: passengerCoordinate, key: currentID)
+                    mapView.addAnnotation(passengerAnnotation)
+                    destinationTextField.text = tableView.cellForRow(at: indexPath)?.textLabel?.text
+                    let selectedMapItem = matchingItems[indexPath.row]
+                    DataService.instance.REF_USERS.child(currentID).updateChildValues([DatabaseKeys.tripCoordinate.rawValue: [selectedMapItem.placemark.location?.coordinate.latitude, selectedMapItem.placemark.location?.coordinate.longitude]])
+                    animateTableView(shouldShow: false)
+                    print("This is the second current user's id: \(currentID.description)")
+                    print("Selected!")
+                } else {
+                    print("It was not possible to get the current user id")
+                    fatalError()
+                }
             }
+        } else {
+            print("The current user is not signed in")
         }
+        
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
